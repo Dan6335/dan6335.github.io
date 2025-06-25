@@ -1,87 +1,118 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Minecraft Mods</title>
-    <style>
-        body {
-            background-color: #0f0f0f;
-        }
-        .feature-cards {
-            margin-top: -100px;
-            position: relative;
-            z-index: 10;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div id="particles"><canvas class="particles-js-canvas-el" width="1003" height="911" style="width: 100%; height: 100%;"></canvas></div>
-        <div class="info-text">
-            <h1>Minecraft Mods</h1>
-        </div>
-    </header>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   My Minecraft Mods
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
-    <section id="projects">
-        <div class="feature-cards">
-            <a href="mods/BluedudeDragons.html" class="card" style="height: 400px; display: flex; flex-direction: column;">
-                <div class="info" style="display: flex; flex-direction: column; height: 100%; justify-content: center; align-items: center;">
-                    <img style="max-width: 200px; border-radius: 20px; margin-bottom: 10px;" src="assets/BluedudeDragons.png" alt="Bluedude Dragons">
-                    <h1>Bluedude Dragons</h1>
-                </div>
-            </a>
-            <a href="mods/DimensionalHybrids.html" class="card" style="height: 400px; display: flex; flex-direction: column;">
-                <div class="info" style="display: flex; flex-direction: column; height: 100%; justify-content: center; align-items: center;">
-                    <img style="max-width: 200px; border-radius: 20px; margin-bottom: 10px;" src="assets/DimensionalHybrids.png" alt="Dimensional Hybrids">
-                    <h1>Dimensional Hybrids</h1>
-                </div>
-            </a>
-            <a target="_blank" href="https://github.com/MeAlam1/BlueLib" class="card bluelib-card" style="height: 400px;">
-                <div class="info">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img style="max-width: 200px; border-radius: 20px; padding-bottom: 10px;" src="assets/BlueLib.png" alt="BlueLib">
-                    </div>
-                    <h1>BlueLib</h1>
-                    <p>
-                        BlueLib is a project that I am currently developing that is an All round Library for Minecraft Mods with Data Driven Features to ensure that anyone can implement this Library and have full freedom over the Features with both 
-                        Resource and Datapack Support!
-                    </p>
-                </div>
-            </a>
-            <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/jurassicraft" class="card" style="height: 400px;">
-                <div class="info">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img style="max-width: 200px; border-radius: 20px; padding-bottom: 10px;" src="http://i.imgur.com/jYSDYFg.png" alt="JurassiCraft">
-                    </div>
-                    <h1>JurassiCraft</h1>
-                    <p>
-                        I am currently engaged in the process of porting JurassiCraft to Forge version 1.20.1. 
-                        This undertaking involves a comprehensive analysis of the existing codebase, adapting it to align with the updated features and functionalities of the latest Forge version.
-                    </p>
-                </div>
-            </a>            
-            <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/tales-of-varmithore" class="card" style="height: 400px;">
-                <div class="info">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img style="max-width: 200px; border-radius: 20px; padding-bottom: 10px;" src="assets/TalesOfVarmithore.png" alt="Tales of Varmithore">
-                    </div>
-                    <h1>Tales of Varmithore</h1>
-                    <p>
-                        Tales of Varmithore is fantasy world themed mod ToV will contain a lot of stuff, including fantasy creatures, 
-                        new blocks, items, new structures, bosses, new ores, new features a lot lot more..
-                    </p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <!-- Add your footer content here -->
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+   .mod-card {
+     transition: transform 0.3s ease;
+     position: relative;
+     overflow: hidden;
+   }
+   .mod-card:hover {
+     transform: scale(1.05);
+     z-index: 10;
+   }
+   .mod-overlay {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     background-color: rgba(0, 0, 0, 0.7);
+     border-top-right-radius: 0.5rem;
+     border-bottom-right-radius: 0.5rem;
+     padding: 1rem;
+     max-width: 90%;
+     opacity: 0;
+     pointer-events: none;
+     color: white;
+     transition: opacity 0.3s ease;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+   .mod-card:hover .mod-overlay {
+     opacity: 1;
+     pointer-events: auto;
+   }
+  </style>
+ </head>
+ <body class="min-h-screen bg-gradient-to-tr from-[#0b2e2a] via-[#0a2a2a] to-[#2a4a1f] font-sans">
+  <div class="max-w-6xl mx-auto px-4 py-6">
+   <div class="flex justify-between items-center mb-6">
+    <a href="index.html" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-full px-6 py-2 transition inline-block text-center">
+     Home
+    </a>
+    <div class="flex space-x-2">
+     <a href="https://github.com/Dan6335" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Github
+     </a>
+     <a href="https://discord.com/users/711811494924517397" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Discord
+     </a>
+     <a href="mailto:danielbrande3@gmail.com" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Email
+     </a>
+    </div>
+   </div>
+   <h1 class="text-white text-3xl font-extrabold text-center mb-8 font-[Inter]">
+    My Minecraft Mods
+   </h1>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <a href="https://github.com/MeAlam1/BlueLib/" target="_blank" rel="noopener noreferrer" class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer block">
+     <img alt="Blue Lib Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/83d21fab-7bda-40fe-0987-611173b299a9.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">BlueLib</p>
+      <p class="text-xs">A powerful Minecraft mod library for developers.</p>
+     </div>
+    </a>
+	
+    <a href="https://discord.gg/dX5gB8mA4f" target="_blank" rel="noopener noreferrer" class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer block">
+     <img alt="Bluedude Dragons Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6706c264-b338-4e7e-ce69-d56cf2cb59ee.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">Bluedude Dragons</p>
+      <p class="text-xs">Bluedude Dragons is a HTTYD Mod for Minecraft Neoforge and Fabric 1.21.1</p>
+     </div>
+    </a>
+	
+    <div class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer">
+     <img alt="Utility Mod Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a85e9dde-19a5-4e96-a50d-4b0c7e07c706.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">Utility Mod</p>
+      <p class="text-xs">Provides useful tools and utilities for players.</p>
+     </div>
+    </div>
+	
+    <div class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer">
+     <img alt="Dragon Mod Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6c437e09-4a27-4cd8-96b3-2ad6e2d1fdfd.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">Dragon Mod</p>
+      <p class="text-xs">Adds powerful dragons and related content.</p>
+     </div>
+    </div>
+	
+    <div class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer">
+     <img alt="JG Mod Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/24a3d569-e07e-4152-b941-64f9198a5ee5.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">JG Mod</p>
+      <p class="text-xs">Adds new gameplay mechanics and features.</p>
+     </div>
+    </div>
+	
+    <div class="mod-card bg-[#1f3a3a]/70 rounded-lg shadow-lg relative h-56 cursor-pointer">
+     <img alt="Dark Tools Minecraft mod cover image with dark teal background" class="absolute inset-0 w-full h-full object-cover rounded-lg mix-blend-overlay" height="224" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6c3eca07-8dd9-465a-6dc2-72fc6721a614.jpg" width="400"/>
+     <div class="mod-overlay">
+      <p class="font-semibold text-lg mb-1">Dark Tools</p>
+      <p class="text-xs">Dark-themed tools and weapons for Minecraft.</p>
+     </div>
+    </div>
+	
+   </div>
+  </div>
+ </body>
 </html>
