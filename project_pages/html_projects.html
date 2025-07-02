@@ -8,77 +8,7 @@
   </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-
-    .mod-card-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .mod-card {
-      transition: transform 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border-radius: 9999px;
-      width: 220px;
-      height: 220px;
-      background: rgba(31, 58, 58, 0.7);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      cursor: pointer;
-    }
-
-    .mod-card:hover {
-      transform: scale(1.05);
-      z-index: 10;
-    }
-
-    .mod-icon {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 9999px;
-      display: block;
-    }
-
-    .mod-info {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      background: rgba(20, 20, 40, 0.65);
-      transition: opacity 0.2s;
-      color: #fff;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.2rem;
-      pointer-events: none;
-    }
-
-    .mod-card:hover .mod-info {
-      opacity: 1;
-    }
-
-    .top-right-buttons {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 5px;
-    }
-    .top-left-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body class="min-h-screen bg-gradient-to-b from-[#0016FF] to-[#001630] font-sans relative">
