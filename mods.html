@@ -65,30 +65,39 @@
     .mod-card:hover .mod-info {
       opacity: 1;
     }
+
+    .top-right-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 5px;
+    }
   </style>
 </head>
 
-<body class="min-h-screen bg-gradient-to-b from-[#0016FF] to-[#001630] font-sans">
+<body class="min-h-screen bg-gradient-to-b from-[#0016FF] to-[#001630] font-sans relative">
+  <div class="top-right-buttons">
+    <a href="https://github.com/Dan6335" target="_blank" rel="noopener noreferrer"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Github
+    </a>
+    <a href="https://discord.com/users/711811494924517397" target="_blank" rel="noopener noreferrer"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Discord
+    </a>
+    <a href="mailto:danielbrande3@gmail.com"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
+      Email
+    </a>
+  </div>
+
   <div class="max-w-6xl mx-auto px-4 py-6">
     <div class="flex justify-between items-center mb-6">
       <a href="index.html"
         class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-6 py-2 transition inline-block text-center">
         Home
       </a>
-      <div class="flex space-x-1">
-        <a href="https://github.com/Dan6335" target="_blank" rel="noopener noreferrer"
-          class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
-          Github
-        </a>
-        <a href="https://discord.com/users/711811494924517397" target="_blank" rel="noopener noreferrer"
-          class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
-          Discord
-        </a>
-        <a href="mailto:danielbrande3@gmail.com"
-          class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition inline-block text-center">
-          Email
-        </a>
-      </div>
     </div>
     <h1 class="text-white text-3xl font-extrabold text-center mb-8 font-[Inter]">
       My Minecraft Mods
